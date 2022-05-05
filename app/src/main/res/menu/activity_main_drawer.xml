@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/account"
+            android:title="Mi cuenta"
+            android:icon="@drawable/account"
+            />
+
+        <item
+            android:id="@+id/almacenamiento"
+            android:title="Archivos en almacenamiento"
+            android:icon="@drawable/knapsack"
+            />
+
+        <item
+            android:id="@+id/menu_settings"
+            android:title="Configuración"
+            android:icon="@drawable/settings"
+            />
+        <item android:title="Otras opciones">
+            <menu>
+                <item
+                    android:id="@+id/logout"
+                    android:title="Cerrar sesión"
+                    android:icon="@drawable/logout"
+                    />
+
+
+            </menu>
+        </item>
+    </group>
+</menu>

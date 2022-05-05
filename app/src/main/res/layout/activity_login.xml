@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtingbien"
+        android:layout_marginTop="50dp"
+        android:text="¡Bienvenido de vuelta!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txting"
+        android:layout_below="@id/txtingbien"
+        android:text="Inicia sesión en Knapsack"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtingemail"
+        android:layout_below="@id/txting"
+        android:text="Correo eléctronico:"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_marginTop="55dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtxtingemail"
+        android:layout_below="@+id/txtingemail"
+        android:hint="example@mail.com"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/caja"
+        android:padding="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtingcontra"
+        android:layout_below="@id/txtingemail"
+        android:text="Contraseña:"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_marginTop="55dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtxtingcontra"
+        android:layout_below="@+id/txtingcontra"
+        android:hint="••••••••"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:background="@drawable/caja"
+        android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btningresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtxtingcontra"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#5e17eb"
+            android:text="Continuar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imglogin"
+        android:layout_below="@+id/btningresar"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="180dp"
+        android:maxHeight="180dp"
+        android:src="@drawable/mochila_blanco"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbarlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:visibility="gone"/>
+
+
+    </RelativeLayout>
+</ScrollView>

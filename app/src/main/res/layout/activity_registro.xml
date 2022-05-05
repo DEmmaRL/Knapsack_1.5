@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registroActivity"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtbienvenido"
+            android:layout_marginTop="20dp"
+            android:text="Bienvenido a Knapsack"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtregistro"
+            android:layout_below="@id/txtbienvenido"
+            android:text="¡Rellena el formulario para registrarte en la plataforma!"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtnombre"
+            android:layout_below="@id/txtregistro"
+            android:text="Nombre:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtxtnombre"
+            android:layout_below="@+id/txtnombre"
+            android:hint="ej. Ada Jiménez"
+            android:textSize="16sp"
+            android:inputType="textPersonName"
+            android:background="@drawable/caja"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtemail"
+            android:layout_below="@id/txtnombre"
+            android:text="Correo eléctronico:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginTop="55dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtxtemail"
+            android:layout_below="@+id/txtemail"
+            android:hint="example@mail.com"
+            android:textSize="16sp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/caja"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtfecha"
+            android:layout_below="@id/txtemail"
+            android:text="Fecha de nacimiento:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginTop="55dp"/>
+
+        <EditText
+            android:id="@+id/edtxtfecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtfecha"
+            android:background="@drawable/caja"
+            android:hint="DD/MM/AA"
+            android:inputType="date"
+            android:padding="8dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtcontra"
+            android:layout_below="@id/txtfecha"
+            android:text="Contraseña:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginTop="55dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtxtcontra"
+            android:layout_below="@+id/txtcontra"
+            android:hint="••••••••"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:background="@drawable/caja"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtconfirm"
+            android:layout_below="@id/txtcontra"
+            android:text="Confirmación de contraseña:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginTop="55dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtxtconfirm"
+            android:layout_below="@+id/txtconfirm"
+            android:hint="••••••••"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:background="@drawable/caja"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnregistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtxtconfirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#5e17eb"
+            android:text="Continuar" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressbar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>

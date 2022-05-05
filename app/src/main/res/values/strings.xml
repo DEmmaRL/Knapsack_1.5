@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Knapsack</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Diego E. Rivera</string>
+    <string name="nav_header_subtitle">a18300869@miau.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="open">open</string>
+    <string name="close">Close</string>
+    <string name="menu_home">Mi cuenta</string>
+    <string name="almacenamiento">Almacenamiento</string>
+    <string name="menu_slideshow">Configuración</string>
+    <string name="account">account</string>
+    <string name="logout">logout</string>
+    <string name="title_activity_inicio">InicioActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

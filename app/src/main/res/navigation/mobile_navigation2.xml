@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/almacenamiento">
+
+    <fragment
+        android:id="@+id/account"
+        android:name="com.example.knapsack.activity.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"
+
+        />
+
+    <fragment
+        android:id="@+id/almacenamiento"
+        android:name="com.example.knapsack.activity.ui.gallery.GalleryFragment"
+        android:label="@string/almacenamiento"
+        tools:layout="@layout/fragment_almacenamiento" />
+
+    <fragment
+        android:id="@+id/menu_settings"
+        android:name="com.example.knapsack.activity.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_menu_settings" />
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.example.knapsack.ui.slideshow.SlideshowFragment"
+        android:label="@string/logout"
+        tools:layout="@layout/fragment_menu_settings" />
+</navigation>

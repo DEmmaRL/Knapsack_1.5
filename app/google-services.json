@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "95677813575",
+    "firebase_url": "https://knapsick-default-rtdb.firebaseio.com",
+    "project_id": "knapsick",
+    "storage_bucket": "knapsick.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95677813575:android:cb9db8be8f4c11ad773262",
+        "android_client_info": {
+          "package_name": "com.example.knapsack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95677813575-l3ga0s5mgeepc7n3q3tlalnks740qmup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMK4zWqNyxT4V-1xyYfWSN-xcR6Uq-Tfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95677813575-l3ga0s5mgeepc7n3q3tlalnks740qmup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
