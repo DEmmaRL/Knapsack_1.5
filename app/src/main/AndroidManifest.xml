@@ -37,6 +37,12 @@
             android:name=".FileListActivity"
             android:exported="true" />
         <activity
+            android:name=".knapsack.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".knapsack.FileListActivity"
+            android:exported="true" />
+        <activity
             android:name=".goku.nav_menu"
             android:exported="true"/>
         <activity

@@ -1,6 +1,7 @@
 package com.example.knapsack.Fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import com.example.knapsack.MyAdapter;
 import com.example.knapsack.R;
 import com.example.knapsack.goku.nav_menu;
+import com.example.knapsack.knapsack.FileListActivity;
+import com.example.knapsack.knapsack.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
@@ -33,7 +36,6 @@ import java.nio.file.Paths;
  * create an instance of this fragment.
  */
 public class Filelist extends Fragment {
-    FloatingActionButton fab;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static String path = "param1";
@@ -86,9 +88,20 @@ public class Filelist extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         Button back= view.findViewById(R.id.back_button);
         TextView noFilesText = view.findViewById(R.id.nofiles_textview);
-
+        FloatingActionButton fab=view.findViewById(R.id.fab);
         //       Toast.makeText(getActivity(), mParam2, Toast.LENGTH_SHORT).show();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Action", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(getActivity(), FileListActivity.class);
+                String path = Environment.getExternalStorageDirectory().getPath();
+                intent.putExtra("targetLocation",mParam1);
+                intent.putExtra("path",path);
+                startActivity(intent);
+            }
+        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

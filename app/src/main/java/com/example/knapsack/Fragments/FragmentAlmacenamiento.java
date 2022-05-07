@@ -53,14 +53,14 @@ public class FragmentAlmacenamiento extends Fragment {
                     if (!f.exists()) {
                         f.mkdirs();
                     }
-                    if(!f.exists())
+                  /*  if(!f.exists())
                     {
                         Toast.makeText(getActivity(), "NO", Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
                         Toast.makeText(getActivity(), "SI", Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.setReorderingAllowed(true);
