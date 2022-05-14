@@ -4,7 +4,32 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/drawable-v24/ic_add.xml" value="0.113" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/drawable/knapsack.xml" value="0.113" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_add_file.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_add_file_list.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_file_list.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_nav_menu.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_navegar.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_nuevo.xml" value="0.25" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_perfil.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/activity_registro.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/almacenamiento_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/app_bar_inicio.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/app_bar_nav.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/content_inicio.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/content_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/content_nav.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/detalle_persona_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/drawer_header.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/drawer_toolbar.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/fragment_filelist.xml" value="0.22" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/lista_personas.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/persona_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/personas_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/recycler_item.xml" value="0.22" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/layout/recycler_view_file.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.113" />
+        <entry key="..\:/Users/xxwar/Downloads/Knapsack_1.41 (1)/Knapsack-v1.2-prueba/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

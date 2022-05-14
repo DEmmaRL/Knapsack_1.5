@@ -3,6 +3,7 @@ package com.example.knapsack.Fragments;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +24,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.knapsack.NuevoActivity;
 import com.example.knapsack.R;
+import com.example.knapsack.db.DbHelper;
 import com.example.knapsack.goku.nav_menu;
 import com.google.android.material.button.MaterialButton;
 
@@ -66,7 +69,18 @@ public class FragmentAlmacenamiento extends Fragment {
                     transaction.setReorderingAllowed(true);
 
                     // Replace whatever is in the fragment_container view with this fragment
-
+                    DbHelper dbHelper = new DbHelper(getActivity());
+                    SQLiteDatabase db= dbHelper.getWritableDatabase();
+                    if(db!=null)
+                    {
+                        Toast.makeText(getActivity(), "BASE DE DATOS CREADA", Toast.LENGTH_SHORT).show();
+                      //  Intent intent = new Intent( getActivity(), NuevoActivity.class);
+                        //startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "ERROR: BASE DE DATOS NO CREADA", Toast.LENGTH_SHORT).show();
+                    }
                     transaction.replace(R.id.almacenamiento_vista, Filelist.newInstance("spiderman", "superman", 0));
                     //getActivity().prueba("s");
                     // Commit the transaction

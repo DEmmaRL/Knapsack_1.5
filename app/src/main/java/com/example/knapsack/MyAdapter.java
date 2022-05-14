@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knapsack.Fragments.Filelist;
 import com.example.knapsack.Fragments.FragmentAlmacenamiento;
+import com.example.knapsack.db.DbContactos;
 
 import java.io.File;
 import java.util.Objects;
@@ -54,10 +55,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
         File selectedFile = filesAndFolders[position];
+        View f= holder.itemView;
+        TextView F=(TextView) f.findViewById(R.id.idinfo);
+        //F.setText("Descripción");
         holder.textView.setText(selectedFile.getName());
-
+        DbContactos dbContactos=new DbContactos(context);
+        try {
+            String aux = dbContactos.getDescription(selectedFile.getAbsolutePath());
+            if (aux != null){
+                F.setText(aux);
+             }
+            else
+            {
+                F.setText("____");
+            }
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(context, "ERROR " + e, Toast.LENGTH_SHORT).show();
+        }
+        //long id= dbContactos.insertarDescripcion(txtPath.getText().toString(), txtDescription.getText().toString());
         if(selectedFile.isDirectory()){
             holder.imageView.setImageResource(R.drawable.ic_baseline_folder_24);
         }else{
@@ -90,6 +108,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                     //open thte file
                     try {
                         File file = new File(selectedFile.getAbsolutePath());
+                        Toast.makeText(context, selectedFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
                         Uri uri =  FileProvider.getUriForFile(Objects.requireNonNull(context.getApplicationContext()),BuildConfig.APPLICATION_ID + ".provider",file);
                         String mime = context.getContentResolver().getType(uri);
                         Intent intent = new Intent();

@@ -1,5 +1,6 @@
 package com.example.knapsack.knapsack;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,9 +14,16 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.knapsack.Fragments.Filelist;
+import com.example.knapsack.NuevoActivity;
 import com.example.knapsack.R;
+import com.example.knapsack.goku.nav_menu;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,10 +36,12 @@ import java.io.OutputStream;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     Context context;
+    FragmentManager contexto;
     File[] filesAndFolders;
     String targetLocation;
-    public MyAdapter(Context context, File[] filesAndFolders, String targetLocation){
+    public MyAdapter(Context context, File[] filesAndFolders, FragmentManager contexto, String targetLocation){
         this.context = context;
+        this.contexto = contexto;
         this.filesAndFolders = filesAndFolders;
         this.targetLocation=targetLocation;
     }
@@ -68,7 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                     context.startActivity(intent);
                 }else{
                     File sourceLocation = new File (selectedFile.getAbsolutePath());
-
+                    Toast.makeText(context, selectedFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
                     // make sure your target location folder exists!
                     File targetLocatio = new File (targetLocation+"/" + selectedFile.getName());
                     //Toast.makeText(context.getApplicationContext(),targetLocatio.getAbsolutePath(),Toast.LENGTH_SHORT).show();
@@ -105,14 +115,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                             out.close();
 
 
-                            Toast.makeText(context.getApplicationContext(), "Copy file successful.", Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(context.getApplicationContext(), "Copy file successful.", Toast.LENGTH_SHORT).show();
                         }catch (Exception e)
                         {
-                            Toast.makeText(context.getApplicationContext(),"Copy file failed",Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(context.getApplicationContext(),"Copy file failed",Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(context.getApplicationContext(),"Copy file failed. Source file missing.",Toast.LENGTH_SHORT).show();
-                    }
+                        try {
+                            Intent intent = new Intent(v.getContext(), NuevoActivity.class);
+                            intent.putExtra("path", targetLocatio.getAbsolutePath());
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.makeText(context, "ERROR " +e, Toast.LENGTH_SHORT).show();
+                        }
+                        }
+                    //Intent intent = new Intent(context, nav_menu.class);
+                    //String path = Environment.getExternalStorageDirectory().getPath();
+                    //context.startActivity(intent);
+                    //AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                  //  Activity myFragment = new nav_menu();
+                    //activity.getSupportFragmentManager().beginTransaction().replace(R.id.add_file_list, myFragment).addToBackStack(null).commit();
+
+                    /*
+                    Intent intent = new Intent(context, Filelist.class);
+                    String path = Environment.getExternalStorageDirectory().getPath();
+                    context.startActivity(intent);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    Fragment myFragment = new Filelist();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.add_file_list, myFragment).addToBackStack(null).commit();
+*/
                 }
             }
         });
