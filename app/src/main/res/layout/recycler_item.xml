@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <ImageView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-            android:layout_marginTop="15dp"
+            android:id="@+id/icon_view"
+            android:layout_width="66dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="1dp"
             android:layout_marginRight="10dp"
-        tools:src="@drawable/ic_baseline_folder_24"
-        android:id="@+id/icon_view"/>
+            tools:src="@drawable/ic_baseline_folder_24" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

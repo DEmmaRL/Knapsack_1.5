@@ -52,7 +52,7 @@ public class FragmentAlmacenamiento extends Fragment {
                     String folder_main = "NewFolder";
 
                     getActivity().getExternalFilesDir("Knapsack");
-                    File f = new File(Environment.getExternalStorageDirectory(), "Knapsack");
+                    File f = new File(Environment.getExternalStorageDirectory(), "Knapsafck");
                     if (!f.exists()) {
                         f.mkdirs();
                     }

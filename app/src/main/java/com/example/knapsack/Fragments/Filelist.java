@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -136,7 +137,7 @@ public class Filelist extends Fragment {
         //Toast.makeText(getActivity(),mParam1,Toast.LENGTH_SHORT).show();
         File root = new File(mParam1);
         File[] filesAndFolders = root.listFiles();
-
+        Arrays.sort(filesAndFolders);
         if(filesAndFolders==null || filesAndFolders.length ==0){
             noFilesText.setVisibility(View.VISIBLE);
             return view;

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -58,8 +60,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         File selectedFile = filesAndFolders[position];
         View f= holder.itemView;
         TextView F=(TextView) f.findViewById(R.id.idinfo);
+        ImageView icon = f.findViewById(R.id.icon_view);
+        //icon.setImageResource(R.drawable.lain_test);
         //F.setText("Descripción");
         holder.textView.setText(selectedFile.getName());
+      //  holder.imageView.setImageResource(R.drawable.lain_test);
         DbContactos dbContactos=new DbContactos(context);
         try {
             String aux = dbContactos.getDescription(selectedFile.getAbsolutePath());
@@ -79,7 +84,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         if(selectedFile.isDirectory()){
             holder.imageView.setImageResource(R.drawable.ic_baseline_folder_24);
         }else{
-            holder.imageView.setImageResource(R.drawable.ic_baseline_insert_drive_file_24);
+            String cover= selectedFile.getAbsolutePath();
+            cover = cover.replace(".", "_");
+            cover = cover.replace("/", "_");
+            File imagen= new File("storage/emulated/0/Knapsack_covers"+ "/" + cover+".jpg");
+            if(imagen.exists()){
+
+                Bitmap myBitmap = BitmapFactory.decodeFile(imagen.getAbsolutePath());
+
+
+                holder.imageView.setImageBitmap(myBitmap);
+
+            }
+            else
+            {
+                holder.imageView.setImageResource(R.drawable.ic_baseline_insert_drive_file_24);
+            }
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
