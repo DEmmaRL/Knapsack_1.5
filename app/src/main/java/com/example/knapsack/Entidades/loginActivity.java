@@ -1,7 +1,4 @@
-package com.example.knapsack;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.knapsack.Entidades;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +12,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.knapsack.R;
 import com.example.knapsack.goku.nav_menu;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -39,7 +40,6 @@ public class loginActivity extends AppCompatActivity {
     private static final String TAG = "loginActivity";
     private StorageReference mStorageRef;
     int i;
-    boolean f=false;
     boolean aux = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class loginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbarlogin);
 
         authPerfil = FirebaseAuth.getInstance();
-/*
+
         String a="texto/no(", b=").txt";
         mStorageRef.child("texto/no.txt").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -62,18 +62,50 @@ public class loginActivity extends AppCompatActivity {
                 i=1;
                 aux=false;
                     while (!aux) {
-                        Toast.makeText(loginActivity.this, "reno", Toast.LENGTH_SHORT).show();
+
                         if(uploadfile(i, a, b))
                         {
                             aux=true;
-                        }else
-                        {
-                            Toast.makeText(loginActivity.this, "existe "+ i, Toast.LENGTH_SHORT).show();
                         }
+
                         i++;
 
                     }
+                Toast.makeText(loginActivity.this, ""+i, Toast.LENGTH_SHORT).show();
+                        try {
+                            Toast.makeText(loginActivity.this, "texto/no" + "(" + i + ")" + ".txt", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginActivity.this, "no existe" + i, Toast.LENGTH_SHORT).show();
+                            aux = true;
+                            Toast.makeText(loginActivity.this, "NO EXISTEEEEE", Toast.LENGTH_SHORT).show();
+                            StorageReference referencia = mStorageRef.child("texto/no" + "(" + i + ")" + ".txt");
+                            InputStream archivo = getResources().openRawResource(R.raw.storage);
+                            referencia.putStream(archivo)
+                                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                            // Get a URL to the uploaded content
+                                            Toast.makeText(loginActivity.this, "SUBIDO", Toast.LENGTH_SHORT).show();
+                                            //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                                            aux = true;
 
+
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception exception) {
+                                            // Handle unsuccessful uploads
+                                            // ...
+                                            Toast.makeText(loginActivity.this, "ERROR ffff", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        } catch (Exception e) {
+                            Toast.makeText(loginActivity.this, "Algo falló", Toast.LENGTH_SHORT).show();
+                        }
+                        i++;
+                        if (aux) {
+                            i=0;
+                        }
 
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -103,7 +135,7 @@ public class loginActivity extends AppCompatActivity {
         });
 
 
-*/
+
 
         Button btnLogin = findViewById(R.id.btningresar);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -133,56 +165,8 @@ public class loginActivity extends AppCompatActivity {
     }
 
     private boolean uploadfile(int i, String a, String b) {
-        int c = i;
-    try {
 
-
-        mStorageRef.child(a + i + b).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Toast.makeText(loginActivity.this, "" + c, Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                Toast.makeText(loginActivity.this, "NO EXISTEEEEE", Toast.LENGTH_SHORT).show();
-                final StorageReference referencia = mStorageRef.child(a + c + b);
-                f = true;
-                InputStream archivo = getResources().openRawResource(R.raw.storage);
-                referencia.putStream(archivo)
-                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                // Get a URL to the uploaded content
-                                Toast.makeText(loginActivity.this, "SUBIDO", Toast.LENGTH_SHORT).show();
-                                //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception exception) {
-                                // Handle unsuccessful uploads
-                                // ...
-                                Toast.makeText(loginActivity.this, "ERROR ffff", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        });
-        Toast.makeText(this, "coottton", Toast.LENGTH_SHORT).show();
-    }
-    catch (Exception e)
-    {
-        Toast.makeText(this, "unabomber", Toast.LENGTH_SHORT).show();
-    }
-       if(f)
-       {
-           f=false;
-           return true;
-       }
-       else
-       {
-           return false;
-       }
+        return false;
     }
 
     private void ingresarUsuario(String email, String contra) {

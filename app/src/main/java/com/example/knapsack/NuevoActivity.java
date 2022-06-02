@@ -116,10 +116,10 @@ public class NuevoActivity extends AppCompatActivity {
             File sourceLocation = new File (path.getPath());
            // Toast.makeText(this,"MMMM "+ path.getPath(), Toast.LENGTH_SHORT).show();
             // make sure your target location folder exists!
-            File targetLocatio = new File (targetLocation+"/" + archivo + ".jpg");
+            String extension = sourceLocation.getAbsolutePath().substring(sourceLocation.getAbsolutePath().lastIndexOf("."));
+            File targetLocatio = new File (targetLocation+"/" + archivo + extension);
 
-
-
+            //sourceLocation.renameTo(targetLocatio);
             String path_source=path.getPath(), path_destination=targetLocatio.getAbsolutePath();
             path_source = path_source.replace("/raw//", "");
             Toast.makeText(this, "WWWW "+ path_source, Toast.LENGTH_SHORT).show();

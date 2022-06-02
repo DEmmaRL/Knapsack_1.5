@@ -24,6 +24,8 @@ import com.example.knapsack.Fragments.Filelist;
 import com.example.knapsack.NuevoActivity;
 import com.example.knapsack.R;
 import com.example.knapsack.goku.nav_menu;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     FragmentManager contexto;
     File[] filesAndFolders;
     String targetLocation;
+    private StorageReference mStorageRef;
     public MyAdapter(Context context, File[] filesAndFolders, FragmentManager contexto, String targetLocation){
         this.context = context;
         this.contexto = contexto;
@@ -99,26 +102,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
                         InputStream in = null;
                         try {
-                            in = new FileInputStream(sourceLocation);
-                            OutputStream out = null;
-                            out = new FileOutputStream(targetLocation);
-
-                            // Copy the bits from instream to outstream
-                            byte[] buf = new byte[1024];
-                            int len;
-
-                            while ((len = in.read(buf)) > 0) {
-                                out.write(buf, 0, len);
-                            }
-
-                            in.close();
-                            out.close();
-
-
+                            sourceLocation.renameTo(targetLocatio);
                          //   Toast.makeText(context.getApplicationContext(), "Copy file successful.", Toast.LENGTH_SHORT).show();
                         }catch (Exception e)
                         {
-                         //   Toast.makeText(context.getApplicationContext(),"Copy file failed",Toast.LENGTH_SHORT).show();
+                          Toast.makeText(context.getApplicationContext(),"Copy file failed",Toast.LENGTH_SHORT).show();
                         }
                         try {
                             Intent intent = new Intent(v.getContext(), NuevoActivity.class);
@@ -153,7 +141,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-
+                mStorageRef = FirebaseStorage.getInstance().getReference();
                 PopupMenu popupMenu = new PopupMenu(context,v);
                 popupMenu.getMenu().add("DELETE");
                 popupMenu.getMenu().add("MOVE");

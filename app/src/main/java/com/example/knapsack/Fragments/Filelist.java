@@ -20,10 +20,13 @@ import android.widget.Toast;
 
 import com.example.knapsack.MyAdapter;
 import com.example.knapsack.R;
+import com.example.knapsack.activity.MainActivity;
 import com.example.knapsack.goku.nav_menu;
 import com.example.knapsack.knapsack.FileListActivity;
-import com.example.knapsack.knapsack.MainActivity;
+import com.example.knapsack.loginActivity;
+import com.example.knapsack.perfilActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +40,7 @@ import java.util.Arrays;
  * create an instance of this fragment.
  */
 public class Filelist extends Fragment {
+    private FirebaseAuth authPerfil;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static String path = "param1";
@@ -90,6 +94,8 @@ public class Filelist extends Fragment {
         Button back= view.findViewById(R.id.back_button);
         TextView noFilesText = view.findViewById(R.id.nofiles_textview);
         FloatingActionButton fab=view.findViewById(R.id.fab);
+        FloatingActionButton logout=view.findViewById(R.id.logout);
+        authPerfil = FirebaseAuth.getInstance();
         //       Toast.makeText(getActivity(), mParam2, Toast.LENGTH_SHORT).show();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +109,8 @@ public class Filelist extends Fragment {
                 startActivity(intent);
             }
         });
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

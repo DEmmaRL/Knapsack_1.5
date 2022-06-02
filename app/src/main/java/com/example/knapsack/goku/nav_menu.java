@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -22,8 +23,10 @@ import com.example.knapsack.Fragments.FragmentAlmacenamiento;
 import com.example.knapsack.Fragments.FragmentPersonas;
 import com.example.knapsack.Fragments.PersonasFragment;
 import com.example.knapsack.R;
+import com.example.knapsack.activity.MainActivity;
 import com.example.knapsack.iComunicaFragments;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class nav_menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
     DrawerLayout drawerLayout;
@@ -33,7 +36,7 @@ public class nav_menu extends AppCompatActivity implements NavigationView.OnNavi
     String s;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-
+    private FirebaseAuth authPerfil;
     //variable del fragment detalle
     DetallePersonaFragment detallePersonaFragment;
     //DetallePersonaFragment detallePersonaFragment;
@@ -91,6 +94,7 @@ public class nav_menu extends AppCompatActivity implements NavigationView.OnNavi
 */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        authPerfil = FirebaseAuth.getInstance();
         //para cerrar automaticamente el menu
         drawerLayout.closeDrawer(GravityCompat.START);
         if(menuItem.getItemId() == R.id.personas){
@@ -110,6 +114,15 @@ public class nav_menu extends AppCompatActivity implements NavigationView.OnNavi
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_fragment,new FragmentAlmacenamiento());
             fragmentTransaction.commit();
+        }
+        if(menuItem.getItemId()== R.id.logout)
+        {
+            authPerfil.signOut();
+            Toast.makeText(nav_menu.this, "Se ha cerrado la sesión", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(nav_menu.this, MainActivity.class);
+
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
         return false;
     }
